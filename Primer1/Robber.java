@@ -6,28 +6,15 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Robber extends Actor
+public class Robber extends Person
 {
-    private int delay;
-    private int delayCounter;
+    
     
     public Robber () 
     {
-    this.delay=20;
-    this.delayCounter=0;
-}
-    
-    public void act()
-    {
-      if (this.delayCounter==this.delay)
-       {
-           this.movement();
-           this.delayCounter=0 ;
-        }else
-        {
-            this.delayCounter=this.delayCounter+1;
-        }  
+        super(20);
     }
+    
     public void movement()
 {
     this.setRotation(90*Greenfoot.getRandomNumber(4));
