@@ -35,7 +35,9 @@ public class Police extends Person
       
       if (this.isTouching(Robber.class))    // ako dodje do policajca
         {           
-            Greenfoot.stop();   //kraj programa
+            World world =this.getWorld() ;
+            Beach beach = (Beach)world;    // klasa world nema metodu
+            beach.endTheGame(true);
         }
         
         
