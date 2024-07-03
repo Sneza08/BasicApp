@@ -38,6 +38,7 @@ public class Police extends Person
             World world =this.getWorld() ;
             Beach beach = (Beach)world;    // klasa world nema metodu
             beach.endTheGame(true);
+         
         }
         
         
