@@ -15,19 +15,15 @@ public class Beach extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(15 ,10, 60); 
-        this.addObject(new Police("w","s","a","d"), 0,0);
-        //this.addObject(new Police("up","down","left","right"), 1,1);
-        this.addObject(
-        new Robber(),
-        Greenfoot.getRandomNumber(this.getWidth()),
-        Greenfoot.getRandomNumber(this.getHeight()));
+        this.prepareTheBeach();
     
-       this.counter=100;
+       
 }
      public void endTheGame(boolean win)
      
      {
-        int x=this.getWidth()/2;
+        this.removeObjects(this.getObjects(Actor.class));
+         int x=this.getWidth()/2;
         int y=this.getHeight()/2;
         String message;
         if (win) {
@@ -37,6 +33,9 @@ public class Beach extends World
          message = "The Robber escaped. You lost!";
         }
         this.showText(message, x,y);
+        Greenfoot.delay(40);
+        this.showText(null,x,y);
+        this.prepareTheBeach();
         Greenfoot.stop();
     }
        public void act()     
@@ -46,6 +45,15 @@ public class Beach extends World
              this.endTheGame(false);
          }
         }
-       
+       private void prepareTheBeach()
+       {
+           this.addObject(new Police("w","s","a","d"), 0,0);
+        //this.addObject(new Police("up","down","left","right"), 1,1);
+        this.addObject(
+        new Robber(),
+        Greenfoot.getRandomNumber(this.getWidth()),
+        Greenfoot.getRandomNumber(this.getHeight()));
+        this.counter=100;
+        }
     }
 
