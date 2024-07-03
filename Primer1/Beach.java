@@ -47,13 +47,25 @@ public class Beach extends World
         }
        private void prepareTheBeach()
        {
-           this.addObject(new Police("w","s","a","d"), 0,0);
-        //this.addObject(new Police("up","down","left","right"), 1,1);
+           
+        this.addObject(new Police("w","s","a","d"), 0,0);
+        int x=0;
+        int y=0;
+        while (this.getObjectsAt(x,y,Police.class).isEmpty())
+        {
+            x= Greenfoot.getRandomNumber(this.getWidth());
+            y= Greenfoot.getRandomNumber(this.getHeight());
+            
+        }
+        this.addObject(new HiidingSpot(),x,y);
+        
         this.addObject(
         new Robber(),
         Greenfoot.getRandomNumber(this.getWidth()),
-        Greenfoot.getRandomNumber(this.getHeight()));
-        this.counter=100;
+        Greenfoot.getRandomNumber(this.getHeight())
+        );
+        this.counter=500;
+        
         }
     }
 

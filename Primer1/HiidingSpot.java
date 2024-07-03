@@ -11,6 +11,6 @@ public class HiidingSpot extends Actor
 
     public void act()
     {
-        // Add your action code here.
+        
     }
 }
