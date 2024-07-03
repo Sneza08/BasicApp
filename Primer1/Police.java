@@ -42,7 +42,7 @@ public class Police extends Actor
         }
         if (this.isTouching(Robber.class))    // ako dodje do policajca
         {           
-            Greenfoot.stop();  //kraj programa
+            Greenfoot.stop();   //kraj programa
         }
         
     }
