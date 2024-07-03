@@ -31,6 +31,7 @@ public class Police extends Actor
      */
     public void act()
     {
+
        if (this.delayCounter==this.delay)
        {
            this.movement();
@@ -39,7 +40,10 @@ public class Police extends Actor
         {
             this.delayCounter=this.delayCounter+1;
         }
-      
+        if (this.isTouching(Robber.class))    // ako dodje do policajca
+        {           
+            Greenfoot.stop();  //kraj programa
+        }
         
     }
     public void movement()
