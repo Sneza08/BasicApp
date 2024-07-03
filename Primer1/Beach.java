@@ -13,7 +13,7 @@ public class Beach extends World
     
     public Beach()
     {    
-        // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
+        
         super(15 ,10, 60); 
         this.prepareTheBeach();
     
@@ -51,7 +51,7 @@ public class Beach extends World
         this.addObject(new Police("w","s","a","d"), 0,0);
         int x=0;
         int y=0;
-        while (this.getObjectsAt(x,y,Police.class).isEmpty())
+        while (!this.getObjectsAt(x,y,Police.class).isEmpty())
         {
             x= Greenfoot.getRandomNumber(this.getWidth());
             y= Greenfoot.getRandomNumber(this.getHeight());
